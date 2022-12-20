@@ -1,0 +1,28 @@
+<section class="answers" *ngIf="quizzes">
+  <div class="container">
+    <div class="test-pre-tittle">
+      <span class="test-tittle-transparent">Результат прохождения теста</span>
+      <img class="arrow" src="assets/img/Стрелочка.png" alt="Стрелка">
+      <span class="test-tittle" id="test-tittle">{{quizzes.name}}</span>
+    </div>
+    <div class="tittle"><span>Правильные ответы</span> к тесту</div>
+    <div class="pre-tittle" id="pre-tittle">Тест выполнил <span>{{userInfo.fullName}}, {{userInfo.email}}</span></div>
+    <div class="answers-items">
+      <div class="answer" *ngFor="let question of quizzes.questions">
+        <div class="test-question-title">
+          <span>Вопрос:</span>
+          {{question.question}}
+        </div>
+        <div class="items" *ngFor="let answer of question.answers">
+          <div class="answers-item">
+            <div class="answers-item-circle" [class.green-circle]="answer.correct" [class.red-circle]="answer.correct === false"></div>
+            <div class="answers-text" [class.green-text]="answer.correct" [class.red-text]="answer.correct === false">{{answer.answer}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="link-block">
+      <a class="link" id="link-answers" routerLink="/result"><span>Обратно к моему результату теста</span><img src="assets/img/arrow-result.png" alt="Стрелка"></a>
+    </div>
+  </div>
+</section>

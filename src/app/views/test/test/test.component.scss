@@ -1,0 +1,175 @@
+.test {
+  padding: 20px 0 50px 0;
+  .container {
+    .test-pre-title {
+      font-size: 20px;
+      line-height: 24px;
+      color: #DCDCF3;
+    }
+    .test-progressbar {
+      margin-top: 60px;
+      margin-bottom: 80px;
+      display: flex;
+    }
+    .test-question {
+      .test-question-tittle {
+        font-family: 'Museo Sans Cyrl 700', sans-serif;
+        font-size: 36px;
+        line-height: 43px;
+        span {
+          color: #6933DC;
+          font-family: 'Museo Sans Cyrl 700', sans-serif;
+          font-size: 36px;
+          line-height: 43px;
+        }
+      }
+      .test-question-options {
+        margin-top: 58px;
+        min-height: 344px;
+        .test-question-option {
+          font-size: 20px;
+          line-height: 24px;
+          margin-bottom: 20px;
+          display: flex;
+          label {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .test-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .test-time {
+        display: flex;
+        align-items: center;
+        .test-time-text {
+          font-size: 17px;
+          line-height: 20px;
+          color: #6933DC;
+          margin-right: 15px;
+        }
+        .test-time-clock {
+          background-image: url("../../../../assets/img/time.png");
+          background-size: cover;
+          background-position: center;
+          height: 29px;
+          width: 27px;
+          font-size: 10px;
+          text-align: center;
+          line-height: 28px;
+        }
+      }
+      .button-test {
+        background: transparent;
+        color: #6933DC;
+        border: 1px solid #6933DC;
+        &:hover {
+          color: #FFFFFF;
+        }
+        &:disabled {
+          background: transparent;
+          color: #e2dfe7;
+          border: 1px solid #e2dfe7;
+        }
+      }
+    }
+    .pass-question {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+      a {
+        font-size: 17px;
+        line-height: 20px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        &:hover {
+          text-decoration: underline;
+        }
+        img {
+          margin-left: 13px;
+        }
+      }
+    }
+    input[type='radio'] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #6933DC;
+      border-radius: 50%;
+      margin: 0 13px 0 0;
+      transform: translateY(2px);
+
+      display: grid;
+      place-content: center;
+      &::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        box-shadow: inset 10px 10px #6933DC;
+        transition: .2s ease transform;
+        transform: scale(0);
+      }
+      &:checked::before {
+        transform: scale(1);
+      }
+    }
+
+    .test-progress-bar-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      &.complete:not(:last-child)::before {
+        background: #6933DC;
+      }
+      &.complete .test-progress-bar-item-circle,
+      &.active .test-progress-bar-item-circle{
+        background: #6933DC;
+      }
+      &.active::after {
+        content: '';
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        width: 14px;
+        height: 14px;
+        background: #DCDCF3;
+        top: 6px;
+      }
+      &:not(:first-child) {
+        margin-left: 130px;
+      }
+      &:not(:last-child)::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        width: 184px;
+        background: #DCDCF3;
+        height: 6px;
+        left: 28px;
+        top: 10px;
+      }
+      .test-progress-bar-item-circle {
+        width: 26px;
+        height: 26px;
+        background: #DCDCF3;
+        border-radius: 50%;
+      }
+      .test-progress-bar-item-text {
+        font-size: 13px;
+        line-height: 16px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+
+
+
+
